@@ -1,13 +1,11 @@
-// le message affiche les erreurs et les informations
-
+// == Import npm
 import React from 'react';
 
+// == Import
 import './message.scss';
 
-const Message = () => (
-  <div className="message">
-    <p className="message-value">xxxxx</p>
-  </div>  
-);
+// == Composant
+const Message = () => <div className="not-found">404</div>;
 
+// == Export
 export default Message;
