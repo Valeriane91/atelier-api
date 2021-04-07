@@ -28,7 +28,7 @@ const SearchBar = ({ manageSubmit, value, setValue}) => (
 
 SearchBar.propTypes = {
   manageSubmit: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.func.isRequired,
   // paramètre : nouvelle valeur
   setValue: PropTypes.func.isRequired,
 };

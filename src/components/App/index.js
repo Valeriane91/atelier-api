@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useState } from 'react';
 
 // == Import
 import SearchBar from 'src/components/SearchBar';
@@ -12,53 +12,25 @@ import reposList from 'src/data/repos';
 import './styles.scss';
 
 // == Composant
-class App extends React.Component {
-  constructor(props) {
-    // on appelle le constructeur de React.Component en fournissant les props
-    super(props);
+const App = () => {
+  const [inputReposLabel, setInputReposLabel] = useState([]);
 
-    // on crée le state du composant (objet)
-    this.state = {
-      // indique si les devises sont affichées
-      items: reposList,
-      // le contenu de l'input pour ajouter une tâche
-      inputReposLabel: '',
-    };
-    // ajout du champs controlé
+  const addSearch = (newValue) => {
+    setInputReposLabel(newValue);
+  };
+  return (
 
-    this.setInputReposLabel = this.setInputReposLabel.bind(this);
-    this.addSearch = this.addSearch.bind(this);
-  }
-
-  // modifier la valeur de inputTaskLabel dans le state
-  setInputReposLabel(newValue) {
-    this.setState({
-      inputReposLabel: newValue,
-    });
-  }
-
-  addSearch() {
-    const { inputReposLabel } = this.state;
-    console.log('on va ajouter une tâche, label= ', inputReposLabel);
-  }
-
-  render() {
-    const { items, inputReposLabel } = this.state;
-
-    return (
-
-      <div className="app">
-        <SearchBar
-          manageSubmit={this.addSearch}
-          value={inputReposLabel}
-          setValue={this.setInputReposLabel}
-        />
-        <ReposResults items={items} />
-        <Message />
-      </div>
-    );
-  }
-}
+    <div className="app">
+      <SearchBar
+        manageSubmit={addSearch}
+        value={inputReposLabel}
+        setValue={setInputReposLabel}
+      />
+      <ReposResults repos={reposList} />
+      <Message />
+    </div>
+  );
+};
 
 // == Export
 export default App;
