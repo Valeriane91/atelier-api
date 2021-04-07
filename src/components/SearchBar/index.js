@@ -4,20 +4,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './searchBar.scss';
 
-const SearchBar = () => (
-  <search className="searchBar">
-    <h1 className="header-title">Converter</h1>
-    <p className="header-amount">1 euro</p>
-  </search>
+const SearchBar = ({ manageSubmit, value, setValue}) => (
+  <form
+    className="search"
+    onSubmit={(event) => {
+      event.preventDefault();
+
+      manageSubmit();
+    }}
+  >
+    <input
+      type="text"
+      placeholder="react"
+      className="input-addSearch"
+      value={value}
+      onChange={(event) => {
+        // console.log(event.target.value);
+        setValue(event.target.value);
+      }}
+    />
+  </form>
 );
 
-
 SearchBar.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      xxx: PropTypes.string.isRequired,
-      // facultatif de valider les propriétés qu'on n'utilise
-    }).isRequired,
-  ).isRequired,
+  manageSubmit: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  // paramètre : nouvelle valeur
+  setValue: PropTypes.func.isRequired,
+};
 
 export default SearchBar;

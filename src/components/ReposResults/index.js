@@ -3,29 +3,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 import './reposResults.scss';
 
-const ReposResults = ({items}) => (
+const ReposResults = ({ items }) => (
 
-  <ul className="article">
-    {item.map((item) => (
-   <img src="jzejcd" alt="Image de repos" className="article__figure__image">
-    <caption className="article__figure__caption">
-    <h4 className="article__caption">
-      {item.name}
-    </h4>
-    <h3 className="article__lien">
-      {item.html_url}
-    </h3>
-    <p className="article__desc">
-      {item.description}
-    </p>
-   </caption>
+  <main className="repos">
+    <h1 className="repos-title">La recherche a donné 1159901 résultats</h1>
+    <div className="repos-list">
+      {items.map((item) => (
+        <ReposResults
+          key={item.id}
+          name={item.name}
+          href={item.html_url}
+          description={item.description}
+        />
       ))}
-
-  </ul> 
-
+    </div>
+  </main>
 );
 
 ReposResults.propTypes = {
@@ -38,6 +32,5 @@ ReposResults.propTypes = {
     }).isRequired,
   ).isRequired,
 };
-
 
 export default ReposResults;
