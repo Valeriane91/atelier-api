@@ -1,4 +1,4 @@
-// le message 
+// le message affiche les erreurs et les informations
 
 import React from 'react';
 
