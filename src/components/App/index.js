@@ -7,7 +7,7 @@ import ReposResults from 'src/components/ReposResults';
 import Message from 'src/components/Message';
 
 // import des données
-import reposList from 'src/data/repos';
+import reposData from 'src/data/repos';
 
 import './styles.scss';
 
@@ -26,7 +26,7 @@ const App = () => {
         value={inputReposLabel}
         setValue={setInputReposLabel}
       />
-      <ReposResults repos={reposList} />
+      <ReposResults items={reposData} />
       <Message />
     </div>
   );

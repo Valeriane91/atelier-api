@@ -5,16 +5,14 @@ import PropTypes from 'prop-types';
 
 import './reposResults.scss';
 
-const ReposResults = ({ repos }) => (
+const ReposResults = ({ items }) => (
 
   <main className="repos">
     <h1 className="repos-title">La recherche a donné 1159901 résultats</h1>
     <div className="repos-list">
-      {repos.map((item) => (
+      {items.map((item) => (
         <ReposResults
-          key={item.id}
           name={item.name}
-          href={item.html_url}
           description={item.description}
         />
       ))}
@@ -23,7 +21,7 @@ const ReposResults = ({ repos }) => (
 );
 
 ReposResults.propTypes = {
-  repos: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

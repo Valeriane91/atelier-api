@@ -1,6 +1,5 @@
-/**
-.article {
-  /* on fixe la tailel de article (en pixels), PUIS on laissera la flexbox déterminer combien d'articles peuvent être affichés par ligne 
+
+.repos {
   width: 250px;
 
   border: 1px solid #ccc;
@@ -8,50 +7,12 @@
   margin: 1em 0;
 }
 
-.article__figure__image {
-  max-width: 100%;
-}
 
-.article__figure__caption__category {
+.repos-title {
   color: #ccc;
-  font-size: .7em; /* Strictement équivalent à 80% 
+  font-size: .7em; 
   text-transform: uppercase;
   border-bottom: 1px solid;
   padding: .3em;
   font-weight: bold;
 }
-
-.article__figure__caption__name {
-  font-weight: bold;
-  font-size: 125%;
-  padding: .8em 0;
-}
-
-.article__figure__caption__desc {
-  font-size: 80%;
-  line-height: 140%;
-}
-
-.article__buy {
-  font-size: 80%;
-  background-color: #c80000;
-  color: white;
-  padding: 1em;
-  text-decoration: none; /* on désactive le "souligné" par défaut du navigateur
-  margin-top: 1em;
-
-  /*On répartit les enfants, en utilisant une flexbox*/
- /** display: flex;
-  justify-content: space-between;
-}
-
-.article__buy__price {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.article__buy__price--linethrough {
-  font-size: 1.2em;
-  text-decoration: line-through;
-}
-*/

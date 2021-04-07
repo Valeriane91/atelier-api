@@ -1,5 +1,6 @@
 /* eslint-disable */
-export default {
+export default 
+{
   "total_count": 586701,
   "incomplete_results": false,
   "items": [
@@ -2972,7 +2973,7 @@ export default {
       "watchers": 4039,
       "default_branch": "master",
       "score": 77.243515
-    }
-  ]
+    }  
+]
 };
 /* eslint-enable */
